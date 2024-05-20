@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+EXTRA_BOOT_PARAMS="boot=live config locales=en_US keyboard-layouts=en keyboard-variant=us persistence"
+
+lb config noauto \
+	--apt-recommends true \
+	-d bookworm \
+	--architectures amd64 \
+	-b iso-hybrid \
+	--debian-installer none \
+	--firmware-chroot true \
+	--archive-areas "main contrib non-free-firmware" \
+	--parent-archive-areas "main contrib non-free-firmware non-free" \
+	--verbose \
+	--bootappend-live "$EXTRA_BOOT_PARAMS" \
+	"${@}"

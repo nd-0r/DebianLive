@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+PACKAGES=<<-epl
+	gnome
+	gnome-core
+epl
+
+printf "%s\n" > config/package-lists/standard.list.chroot $PACKAGES
+
+lb build noauto "${@}" 2>&1 | tee build.log
