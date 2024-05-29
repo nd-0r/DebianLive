@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- The line below is required in order to use the multibuild OBS features -->
+<!-- OBS-Profiles: @BUILD_FLAVOR@ -->
+
+<image schemaversion="7.5" name="debian-persistence-live">
+    <description type="system">
+        <author>Andrew Orals</author>
+        <contact>ao@andreworals.com</contact>
+        <specification>Debian Bookworm Appliance</specification>
+    </description>
+    <preferences>
+        <version>12.1</version>
+        <packagemanager>apt</packagemanager>
+        <bootsplash-theme>fade-in</bootsplash-theme>
+        <bootloader-theme>starfield</bootloader-theme>
+        <locale>en_US</locale>
+        <keytable>us</keytable>
+        <timezone>US/Central</timezone>
+        <type image="iso" primary="true" flags="dmsquash" hybridpersistent_filesystem="ext4" hybridpersistent="true" firmware="efi" kernelcmdline="rd.shell rd.debug log_buf_len=1M">
+            <bootloader name="grub2" timeout="10"/>
+        </type>
+    </preferences>
+    <users>
+        <user password="$1$jRuOK9pQ$mGsj.HJZyH7S.hBfke0bf." home="/root" name="root" groups="root"/>
+    </users>
+    <repository type="apt-deb" repository_gpgcheck="false">
+        <source path="obs://Virtualization:Appliances:Staging/Debian_12"/>
+    </repository>
+    <repository type="apt-deb" distribution="bookworm" repository_gpgcheck="false" components="main contrib non-free non-free-firmware">
+	<source path="http://deb.debian.org/debian"/>
+    </repository>
+    <!-- <repository type="apt-deb" distribution="bookworm-security" components="main contrib non-free non-free-firmware" repository_gpgcheck="false">
+	<source path="http://security.debian.org/debian-security"/>
+    </repository>
+    <repository type="apt-deb" distribution="bookworm-updates" components="main" repository_gpgcheck="false">
+	<source path="http://deb.debian.org/debian"/>
+    </repository> -->
+
+    <packages type="bootstrap"/>
+
+    <include from="file://./packages.xml"/>
+
+</image>

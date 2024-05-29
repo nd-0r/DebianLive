@@ -1,0 +1,41 @@
+mksh
+cpio
+bzip2
+zstd
+# coredumpctl
+# systemd-coredump
+# portablectl
+# systemd-portabled
+# resolvectl
+# systemd-resolved
+# keyctl
+# busybox
+# dbus-broker
+# rngd
+# setfont
+# loadkeys
+# kbd_mode
+# connmand
+# connmanctl
+# connmand-wait-online
+# bluetoothd
+# btrfs
+# dmraid
+# img-lib
+# pcscd
+# tpm2
+# mount.cifs
+# dcbtool
+# fipvlan
+# lldpad
+# fcoemon
+# fcoeadm
+# dcbtool
+# iscsi-iname
+# iscsiadm
+# iscsid
+# nbd-client
+# rpcbind
+# nvme
+# biosdevname
+# memstrack

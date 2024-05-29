@@ -3,4 +3,4 @@ chroot
 cache
 local
 .build
-
+root/usr/lib/dracut/modules.d/*

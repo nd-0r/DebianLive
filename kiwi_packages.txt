@@ -1,0 +1,29 @@
+binutils
+bsdmainutils
+dbus
+dracut
+dracut-kiwi-live
+gnupg
+grub2-common
+grub-efi-amd64-bin
+grub-pc-bin
+grub-theme-starfield
+ifupdown
+init
+iproute2
+iptables
+iputils-ping
+isc-dhcp-client
+linux-image-amd64
+locales-all
+netbase
+netplan.io
+net-tools
+networkd-dispatcher
+# plymouth
+# plymouth-themes
+tzdata
+usr-is-merged
+usrmerge
+vim
+xz-utils
